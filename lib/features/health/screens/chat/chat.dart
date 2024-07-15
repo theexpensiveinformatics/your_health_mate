@@ -29,81 +29,84 @@ class YHMChatScreen extends StatelessWidget {
                 duration: Duration(milliseconds: 500),
                 switchInCurve: Curves.easeIn,
                 switchOutCurve: Curves.easeOut,
-                child: DashChat(
-                  key: UniqueKey(),
-                  // Ensure a unique key for proper animation
-                  messageOptions: MessageOptions(
-                    avatarBuilder: (ChatUser user, Function? onPressAvatar,
-                        Function? onLongPressAvatar) {
-                      return YHMCircularImage(
-                        image: 'assets/images/ai_star.png',
-                        width: 40,
-                        overlayColor: YHMColors.primary,
-                        backgroundColor: Colors.transparent,
-                        height: 40,
-                        fit: BoxFit.cover,
-                      );
-                    },
-                    messageDecorationBuilder: (ChatMessage message,
-                        ChatMessage? previousMessage,
-                        ChatMessage? nextMessage) {
-                      return _customMessageDecorationBuilder(message);
-                    },
-                    messageTextBuilder: (ChatMessage message,
-                        ChatMessage? previousMessage,
-                        ChatMessage? nextMessage) {
-                      return _customMessageTextBuilder(message);
-                    },
-                  ),
-                  inputOptions: InputOptions(
-                    sendButtonBuilder: (onSend) {
-                      return Container(
-                        margin: const EdgeInsets.only(left: 10),
-                        decoration: BoxDecoration(
-                          color: YHMColors.primary.withOpacity(0.1),
+                child: Padding(
+                  padding: EdgeInsets.only(top: 100),
+                  child: DashChat(
+                    key: UniqueKey(),
+                    // Ensure a unique key for proper animation
+                    messageOptions: MessageOptions(
+                      avatarBuilder: (ChatUser user, Function? onPressAvatar,
+                          Function? onLongPressAvatar) {
+                        return YHMCircularImage(
+                          image: 'assets/images/ai_star.png',
+                          width: 40,
+                          overlayColor: YHMColors.primary,
+                          backgroundColor: Colors.transparent,
+                          height: 40,
+                          fit: BoxFit.cover,
+                        );
+                      },
+                      messageDecorationBuilder: (ChatMessage message,
+                          ChatMessage? previousMessage,
+                          ChatMessage? nextMessage) {
+                        return _customMessageDecorationBuilder(message);
+                      },
+                      messageTextBuilder: (ChatMessage message,
+                          ChatMessage? previousMessage,
+                          ChatMessage? nextMessage) {
+                        return _customMessageTextBuilder(message);
+                      },
+                    ),
+                    inputOptions: InputOptions(
+                      sendButtonBuilder: (onSend) {
+                        return Container(
+                          margin: const EdgeInsets.only(left: 10),
+                          decoration: BoxDecoration(
+                            color: YHMColors.primary.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          child: IconButton(
+                            onPressed: onSend,
+                            icon: const Icon(Iconsax.send_1,color: YHMColors.primary,),
+                          ),
+                        );
+                      },
+                      inputDecoration: InputDecoration(
+                        prefixIcon: Container(
+                          margin: const EdgeInsets.all(7),
+                          decoration: BoxDecoration(
+                            color: Color(0xFFf8f8f8),
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          child: IconButton(
+                            onPressed: controller.sendMediaMessage,
+                            icon: const Icon(Iconsax.image),
+                          ),
+                        ),
+                        hintText: "Type a message...",
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 15),
+                        hintStyle: NewTextTheme.regular!.copyWith(fontSize: 15)
+                            .copyWith(color: YHMColors.dark.withOpacity(0.5)),
+                        enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(100),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                          ),
                         ),
-                        child: IconButton(
-                          onPressed: onSend,
-                          icon: const Icon(Iconsax.send_1,color: YHMColors.primary,),
-                        ),
-                      );
-                    },
-                    inputDecoration: InputDecoration(
-                      prefixIcon: Container(
-                        margin: const EdgeInsets.all(7),
-                        decoration: BoxDecoration(
-                          color: Color(0xFFf8f8f8),
+                        focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(100),
-                        ),
-                        child: IconButton(
-                          onPressed: controller.sendMediaMessage,
-                          icon: const Icon(Iconsax.image),
-                        ),
-                      ),
-                      hintText: "Type a message...",
-                      border: InputBorder.none,
-                      contentPadding: EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 15),
-                      hintStyle: NewTextTheme.regular!.copyWith(fontSize: 15)
-                          .copyWith(color: YHMColors.dark.withOpacity(0.5)),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(100),
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(100),
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                          ),
                         ),
                       ),
                     ),
+                    currentUser: controller.currentUser,
+                    onSend: controller.sendMessage,
+                    messages: controller.messages,
                   ),
-                  currentUser: controller.currentUser,
-                  onSend: controller.sendMessage,
-                  messages: controller.messages,
                 ),
               ),
 

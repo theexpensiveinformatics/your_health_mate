@@ -1,0 +1,99 @@
+name: your_health_mate
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # <---------------- DEPENDENCIES ---------------->
+  cupertino_icons: ^1.0.6
+  get: ^4.6.6
+  connectivity_plus: ^5.0.2
+  lottie: ^1.0.1
+  #Get Storage
+  get_storage: ^2.1.1
+  #SplashScreen
+  flutter_native_splash: ^2.3.9
+  # Firebase
+  firebase_core: ^2.24.2
+  firebase_storage: ^11.5.6
+  firebase_database: ^10.1.2
+  firebase_auth: ^4.16.0
+  cloud_firestore: ^4.14.0
+  google_sign_in: ^6.2.1
+  cached_network_image: ^3.3.1
+  intl: ^0.19.0
+  #image picker
+  image_picker: ^1.0.7
+  file_picker: ^6.1.1
+  #Location
+  country_state_city: ^0.1.6
+  geolocator: ^11.0.0
+  geocoding: ^2.0.0
+  firebase_messaging: ^14.9.4
+  flutter_svg: ^2.0.10+1
+  flutter_feather_icons: ^2.0.0+1
+  # page percent_indicator
+  smooth_page_indicator: ^1.1.0
+  url_launcher: ^6.3.0
+  iconsax: ^0.0.8
+  #shimmer
+  shimmer: ^3.0.0
+  permission_handler: ^11.3.1
+  flutter_gemini: ^2.0.4
+  dash_chat_2: ^0.0.20
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  # <-----LOCAL ASSETS ----->
+  assets:
+    - assets/logos/
+    - assets/icons/
+    - assets/images/on_boarding_images/
+    - assets/images/
+    - assets/lottie/
+    - assets/videos/
+    - assets/audios/
+    - assets/svg/
+
+  # <-----LOCAL FONTS ----->
+  fonts:
+    - family: Satoshi
+      fonts:
+        - asset: assets/fonts/SATOSHI-LIGHT.OTF
+          weight: 300
+        - asset: assets/fonts/SATOSHI-REGULAR.OTF
+          weight: 400
+        - asset: assets/fonts/SATOSHI-MEDIUM.OTF
+          weight: 500
+        - asset: assets/fonts/SATOSHI-BOLD.OTF
+          weight: 600
+        - asset: assets/fonts/SATOSHI-BLACK.OTF
+          weight: 700
+        - asset: assets/fonts/SATOSHI-ITALIC.OTF
+          weight: 400
+          style: italic
+        - asset: assets/fonts/SATOSHI-MEDIUMITALIC.OTF
+          weight: 500
+          style: italic
+    - family: Axiforma
+      fonts:
+        - asset: assets/fonts/light.TTF
+          weight: 300
+        - asset: assets/fonts/regular.TTF
+          weight: 400
+        - asset: assets/fonts/semibold.TTF
+          weight: 600
+        - asset: assets/fonts/bold.TTF
+          weight: 700

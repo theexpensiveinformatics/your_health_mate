@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "804788110223",
+    "project_id": "your-health-mate",
+    "storage_bucket": "your-health-mate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804788110223:android:0226580b0dae253b4e01fa",
+        "android_client_info": {
+          "package_name": "com.example.your_health_mate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYJvDxWm62vItjtlZTQtOkv4ASc2NvNDg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

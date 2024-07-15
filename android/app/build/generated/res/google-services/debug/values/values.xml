@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">804788110223</string>
+    <string name="google_api_key" translatable="false">AIzaSyCYJvDxWm62vItjtlZTQtOkv4ASc2NvNDg</string>
+    <string name="google_app_id" translatable="false">1:804788110223:android:0226580b0dae253b4e01fa</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCYJvDxWm62vItjtlZTQtOkv4ASc2NvNDg</string>
+    <string name="google_storage_bucket" translatable="false">your-health-mate.appspot.com</string>
+    <string name="project_id" translatable="false">your-health-mate</string>
+</resources>

@@ -131,7 +131,7 @@ class YHMLoaders {
         padding: const EdgeInsets.only(left: 8),
         child: Transform.scale(
           alignment: Alignment.center,
-          scale: 2.0, // Adjust the scale factor as needed
+          scale: 1.0, // Adjust the scale factor as needed
           child: Lottie.asset('assets/lottie/error.json',repeat: true,),
         ),
       ),

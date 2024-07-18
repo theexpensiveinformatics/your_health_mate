@@ -4,8 +4,8 @@ import 'package:shimmer/shimmer.dart';
 import '../../utils/constants/colors.dart';
 import '../../utils/helper/helper_functions.dart';
 
-class YHMShimmerEffect extends StatelessWidget{
-  const YHMShimmerEffect({
+class YHMShimmerEffectTreatment extends StatelessWidget{
+  const YHMShimmerEffectTreatment({
     Key? key,
     required this.width,
     required this.height,
@@ -22,8 +22,8 @@ class YHMShimmerEffect extends StatelessWidget{
     final dark = YHMHelperFunctions.isDarkMode(context);
     return Shimmer.fromColors(
       period: const Duration(milliseconds: 800),
-      baseColor: dark? Colors.grey[850]! : Colors.grey[100]!,
-      highlightColor: dark? Colors.grey[700]! : Colors.grey[50]!,
+      baseColor: dark? Colors.grey[850]! : YHMColors.newDarkTreatment,
+      highlightColor: dark? Colors.grey[700]! : YHMColors.newLightTreatment,
       child: Container(
         width: width,
         height: height,

@@ -61,10 +61,31 @@ class YHMColors {
   static const Color green = Color(0xFF33C630);
 
   /// new colors
-  static const Color newLightOrange = Color(0xffeaeeff);
-  static const Color newDarkOrange = Color(0xffd1dfff);
-  static const Color newSecondaryOrange = Color(0xff6e7287);
+  static const Color newLightBlue = Color(0xffeaeeff);
+  static const Color newDarkBlue = Color(0xffd1dfff);
+  static const Color newSecondaryBlue = Color(0xff6e7287);
   static const Color newScaffoldBackground = Color(0xffffffff);
+
+  static const Color newLightTreatment = Color(0xfff9eaff);
+  static const Color newDarkTreatment = Color(0xfff0d1ff);
+  static const Color newSecondaryTreatment = Color(0xff7e6e87);
+
+
+  static const Color paragraphBackground = Color(0xffe0f1ff);
+  static const Color whatToDoBackground = Color(0xffeae3fd);
+  static const Color whatNotToDoBackground = Color(0xfffbe4e1);
+  static const Color graphBackground = Color(0xfffff7db);
+
+  static const Color highlight = Color(0x3f0033ff);
+  static const Color lightGreenSection = Color(0xFFc9dfdd);
+  static const Color lightOrangeSection = Color(0xFFe9dcd6);
+  static const Color lightRedSection = Color(0xffdbf0ff);
+  static const Color lightPurpleSection = Color(0xfffff8d2);
+
+
+
+
+
 
 
 }

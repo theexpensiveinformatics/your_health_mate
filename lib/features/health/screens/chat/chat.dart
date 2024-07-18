@@ -9,6 +9,7 @@ import 'package:your_health_mate/utils/newTheme/new_text_theme.dart';
 import '../../../personalization/screens/setting/widgets/circular_image.dart';
 import '../../controllers/chat/chat_screen_controller.dart';
 
+
 class YHMChatScreen extends StatelessWidget {
   final ChatScreenController controller = Get.put(ChatScreenController());
 
@@ -25,7 +26,7 @@ class YHMChatScreen extends StatelessWidget {
           child: Stack(
             children: [
               AnimatedSwitcher(
-                reverseDuration: Duration(milliseconds: 200),
+                reverseDuration: Duration(milliseconds: 500),
                 duration: Duration(milliseconds: 500),
                 switchInCurve: Curves.easeIn,
                 switchOutCurve: Curves.easeOut,

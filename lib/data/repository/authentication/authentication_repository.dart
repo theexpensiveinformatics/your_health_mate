@@ -49,16 +49,16 @@ class AuthenticationRepository extends GetxController {
       } else {
         Get.offAll(() => VerifyEmailScreen(
           email: _auth.currentUser?.email,
-        ),transition: Transition.cupertino);
+        ),transition: Transition.fade);
       }
     } else {
       //Local Storage
       deviceStorage.writeIfNull('IsFirstTime', true);
       //Check if it's first time launching app
       deviceStorage.read('IsFirstTime') != true
-          ? Get.offAll(() => LoginScreen(),transition: Transition.cupertino) // if not first time -> Login Screen
+          ? Get.offAll(() => LoginScreen(),transition: Transition.fade) // if not first time -> Login Screen
           : Get.offAll(
-              () => OnBoardingScreen(),transition: Transition.cupertino); // if first time -> OnBoarding Screen
+              () => OnBoardingScreen(),transition: Transition.fade); // if first time -> OnBoarding Screen
     }
   }
 

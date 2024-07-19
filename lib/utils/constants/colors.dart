@@ -82,6 +82,11 @@ class YHMColors {
   static const Color lightRedSection = Color(0xffdbf0ff);
   static const Color lightPurpleSection = Color(0xfffff8d2);
 
+  static const Color sectionRemainder = Color(0xfffff6b8);
+  static const Color sectionSymtomsChecker = Color(0xffb8dcff);
+  static const Color sectionBookYourSlot = Color(0xffffb8d3);
+  static const Color sectionActivity = Color(0xffb8ffbe);
+
 
 
 

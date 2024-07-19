@@ -4,17 +4,17 @@
 class YHMImages {
   // -- App Logo
   static const String lightAppLogo =
-      "assets/logos/home-helps-png-logo-light.png";
+      "assets/logos/logo_your_health_mate.png";
   static const String darkAppLogo =
-      "assets/logos/home-helps-png-logo-light.png";
+      "assets/logos/logo_your_health_mate.png";
 
   // -- OnBoarding Images
   static const String onBoardingImage1 =
-      "assets/images/on_boarding_images/onboardingOne.png";
+      "assets/images/on_boarding_images/onboarding_1.jpg";
   static const String onBoardingImage2 =
-      "assets/images/on_boarding_images/onboardingTwo.png";
+      "assets/images/on_boarding_images/onboarding_2.png";
   static const String onBoardingImage3 =
-      "assets/images/on_boarding_images/onboardingThree.png";
+      "assets/images/on_boarding_images/onboarding_3.png";
 
   static const String onBoardingImage11 =
       "assets/images/Frame_32.png";
@@ -49,5 +49,5 @@ class YHMImages {
   static const String homeAnimation = "assets/lottie/homeAnimation.json";
 // -- SVG
   static const String allSvg =
-      "https://firebasestorage.googleapis.com/v0/b/home-helps.appspot.com/o/categoriesIcons%2Fall.svg?alt=media&token=efd2a875-d516-4459-a533-b5daafad2b5a";
+      "https://firebasestorage.googleapis.com/v0/b/your-health-mate.appspot.com/o/categories_icons%2Fsort.png?alt=media&token=0fdb3128-76cb-4052-ab6a-8893d23ee28e";
 }

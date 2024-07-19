@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart'; // Ensure you have imported Get package
 import 'package:your_health_mate/features/health/screens/home/home.dart';
+import 'package:your_health_mate/features/help/screens/setting/setting.dart';
 import 'package:your_health_mate/utils/constants/colors.dart';
 import 'package:your_health_mate/utils/constants/sizes.dart';
 import 'package:your_health_mate/utils/helper/helper_functions.dart';
@@ -140,15 +141,6 @@ class NavigationController extends GetxController {
 
   final screens = [
     YHMHomeScreen(),
-    Container(
-      width: double.infinity,
-      height: double.infinity,
-      color: Colors.red,
-    ),
-    Container(
-      width: double.infinity,
-      height: double.infinity,
-      color: Colors.blue,
-    ),
+    YHMSettingScreen()
   ];
 }

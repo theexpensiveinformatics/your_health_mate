@@ -9,17 +9,17 @@ class YHMTexts {
   static const String YHMContinue = "Continue";
 
   // -- OnBoarding Texts
-  static const String onBoardingTitle1 = "Service at Home";
-  static const String onBoardingTitle2 = "Get Good Services";
-  static const String onBoardingTitle3 = "Cost Effective & Trustable";
+  static const String onBoardingTitle1 = "Ai based assistant";
+  static const String onBoardingTitle2 = "Book Your Doctor's Appointment with Ease";
+  static const String onBoardingTitle3 = "Personal Treatments and Many More";
   static const String skipButton = "Skip";
 
   static const String onBoardingSubTitle1 =
-      "Get any type of Service at your DoorStep with one Tap.";
+      "Empower Your Health with AI-Powered Assistance For a Healthier, Happier You";
   static const String onBoardingSubTitle2 =
-      "Get Services from profesionals and experts.";
+      "Booking a doctor's appointment has never been simpler. With our user-friendly platform, you can schedule your medical consultations in just a few clicks. ";
   static const String onBoardingSubTitle3 =
-      "Embrace cost-effective and trustworthy services, delivered swiftly from our doorstep to yours - Swift, Secure, and Contactless Services!";
+      "Discover a world of personalized healthcare with our comprehensive services.";
 
   // -- Authentication Forms
   static const String firstName = "First Name";
@@ -43,9 +43,9 @@ class YHMTexts {
   static const String resendEmailIn = "Resend email in";
 
   // -- Authentication Headings
-  static const String loginTitle = "Welcome back,";
+  static const String loginTitle = "Welcome back to";
   static const String loginSubTitle =
-      "Get any services at your doorstep with one tap.                       ";
+      "Your care is our responsibility                                                                     ";
   static const String signupTitle = "Let’s create your account";
   static const String forgetPasswordTitle = "Forget password";
   static const String forgetPasswordSubTitle =
@@ -68,7 +68,7 @@ class YHMTexts {
 
   // -- Home
   static const String homeAppbarTitle = "Good day for shopping";
-  static const String homeAppbarSubTitle = "Taimoor Sikander";
+  static const String homeAppbarSubTitle = "Krushang Patel";
 
   // -- No Internet
  static const String noInternetTitle = "No Internet Connection found.";

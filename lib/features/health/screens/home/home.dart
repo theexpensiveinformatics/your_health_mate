@@ -11,7 +11,9 @@ import 'package:your_health_mate/features/health/screens/personalized_treatment/
 import 'package:your_health_mate/utils/constants/colors.dart';
 import 'package:your_health_mate/utils/helper/helper_functions.dart';
 import 'package:your_health_mate/utils/newTheme/new_text_theme.dart';
+import '../../../help/screens/home/home_three.dart';
 import '../../../personalization/controller/user_controller.dart';
+import '../../../remainder/screens/reminder_home.dart';
 import '../chat/chat.dart';
 
 class YHMHomeScreen extends StatelessWidget {
@@ -120,7 +122,7 @@ class YHMHomeScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Get.to(YHMChatScreen());
+                      Get.to(YHMChatScreen(),transition: Transition.fade,duration: Duration(milliseconds: 600));
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -203,35 +205,38 @@ class YHMHomeScreen extends StatelessWidget {
                 children: [
                   Flexible(
                     flex: 1,
-                    child: Container(
-                      width: double.infinity,
-                      height: 180,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color:YHMColors.lightOrangeSection.withOpacity(0.7)
-                      ),
-                      child: Stack(
-                        children: [
+                    child: GestureDetector(
+                      onTap: ()=>Get.to(YHMServiceHomeScreen()),
+                      child: Container(
+                        width: double.infinity,
+                        height: 180,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color:YHMColors.sectionBookYourSlot.withOpacity(0.5)
+                        ),
+                        child: Stack(
+                          children: [
 
-                          Positioned(
-                              bottom: 20,
-                              right: 25,
-                              child:Container(
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  color: YHMColors.dark.withOpacity(0.1),
-                                ),
-                                child: Icon(Icons.navigate_next,color: YHMColors.dark.withOpacity(0.8),),
-                              ) ),
-                          Positioned(child: Opacity(opacity: 0.5,
-                              child: Image.asset('assets/images/plane_scribble.png',)),bottom: -80,right: 0,left: -100,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20,top: 20),
-                            child: Text('Book your\nSlot',style: NewTextTheme.bold!.copyWith(fontSize: 15),),
-                          ),
-                        ],
+                            Positioned(
+                                bottom: 20,
+                                right: 25,
+                                child:Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(100),
+                                    color: YHMColors.dark.withOpacity(0.1),
+                                  ),
+                                  child: Icon(Icons.navigate_next,color: YHMColors.dark.withOpacity(0.8),),
+                                ) ),
+                            Positioned(child: Opacity(opacity: 0.5,
+                                child: Image.asset('assets/images/plane_scribble.png',)),bottom: -80,right: 0,left: -100,),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20,top: 20),
+                              child: Text('Book your\nSlot',style: NewTextTheme.bold!.copyWith(fontSize: 15),),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -243,7 +248,7 @@ class YHMHomeScreen extends StatelessWidget {
                       height: 180,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
-                        color:YHMColors.lightGreenSection.withOpacity(0.7)
+                        color:YHMColors.sectionActivity.withOpacity(0.5)
                       ),
                       child: Stack(
                         children: [
@@ -283,35 +288,38 @@ class YHMHomeScreen extends StatelessWidget {
                 children: [
                   Flexible(
                     flex: 1,
-                    child: Container(
-                      width: double.infinity,
-                      height: 180,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color:YHMColors.lightPurpleSection.withOpacity(0.7)
-                      ),
-                      child: Stack(
-                        children: [
+                    child: GestureDetector(
+                      onTap: (){Get.to(ReminderHome(),transition: Transition.fade,duration: Duration(milliseconds: 600));},
+                      child: Container(
+                        width: double.infinity,
+                        height: 180,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color:YHMColors.sectionRemainder.withOpacity(0.5)
+                        ),
+                        child: Stack(
+                          children: [
 
-                          Positioned(
-                              bottom: 20,
-                              right: 25,
-                              child:Container(
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  color: YHMColors.dark.withOpacity(0.1),
-                                ),
-                                child: Icon(Icons.navigate_next,color: YHMColors.dark.withOpacity(0.8),),
-                              ) ),
-                          Positioned(child: Opacity(opacity: 0.5,
-                              child: Image.asset('assets/images/smile_scribble.png',)),bottom: -80,right: 0,left: -100,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20,top: 20),
-                            child: Text('Set\nRemainder',style: NewTextTheme.bold!.copyWith(fontSize: 15),),
-                          ),
-                        ],
+                            Positioned(
+                                bottom: 20,
+                                right: 25,
+                                child:Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(100),
+                                    color: YHMColors.dark.withOpacity(0.1),
+                                  ),
+                                  child: Icon(Icons.navigate_next,color: YHMColors.dark.withOpacity(0.8),),
+                                ) ),
+                            Positioned(child: Opacity(opacity: 0.5,
+                                child: Image.asset('assets/images/smile_scribble.png',)),bottom: -80,right: 0,left: -100,),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20,top: 20),
+                              child: Text('Set\nRemainder',style: NewTextTheme.bold!.copyWith(fontSize: 15),),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -323,7 +331,7 @@ class YHMHomeScreen extends StatelessWidget {
                       height: 180,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
-                          color:YHMColors.lightRedSection.withOpacity(0.7)
+                          color:YHMColors.sectionSymtomsChecker.withOpacity(0.5)
                       ),
                       child: Stack(
                         children: [
@@ -525,7 +533,7 @@ class YHMHomeScreen extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 var dietPlan = homeController.dietPlans[index];
                                 return GestureDetector(
-                                  onTap: () => Get.to(YHMPersonalizedTreatmentFirebase(diseaseName: dietPlan.diseaseName, paragraph: dietPlan.paragraph, symptoms: dietPlan.symptoms, whatToDo: dietPlan.whatToDo, whatNotToDo: dietPlan.whatNotToDo,graphData: dietPlan.graphData,)),
+                                  onTap: () => Get.to(YHMPersonalizedTreatmentFirebase(diseaseName: dietPlan.diseaseName, paragraph: dietPlan.paragraph, symptoms: dietPlan.symptoms, whatToDo: dietPlan.whatToDo, whatNotToDo: dietPlan.whatNotToDo,graphData: dietPlan.graphData,),transition: Transition.fade,duration: Duration(milliseconds: 600)),
                                   child: YHMTreatmentItemLayout(
                                     title: dietPlan.diseaseName ?? 'No Disease Name',
                                     // Add more fields as needed

@@ -5,6 +5,9 @@ import 'package:iconsax/iconsax.dart';
 import 'package:your_health_mate/common/shimmer/YHMShimmerEffect.dart';
 import 'package:your_health_mate/common/shimmer/YHMShimmerTreatment.dart';
 import 'package:your_health_mate/features/health/controllers/home/home_controller.dart';
+import 'package:your_health_mate/features/health/screens/chat/all_chat_list.dart';
+import 'package:your_health_mate/features/health/screens/chat/chat_two.dart';
+import 'package:your_health_mate/features/health/screens/chat/new_chat.dart';
 import 'package:your_health_mate/features/health/screens/home/wigets/emoji_container.dart';
 import 'package:your_health_mate/features/health/screens/home/wigets/treatment_item_layout.dart';
 import 'package:your_health_mate/features/health/screens/personalized_treatment/personalized_treatment_firebase.dart';
@@ -14,7 +17,6 @@ import 'package:your_health_mate/utils/newTheme/new_text_theme.dart';
 import '../../../help/screens/home/home_three.dart';
 import '../../../personalization/controller/user_controller.dart';
 import '../../../remainder/screens/reminder_home.dart';
-import '../chat/chat.dart';
 
 class YHMHomeScreen extends StatelessWidget {
   YHMHomeScreen({super.key});
@@ -122,7 +124,7 @@ class YHMHomeScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Get.to(YHMChatScreen(),transition: Transition.fade,duration: Duration(milliseconds: 600));
+                      Get.to(YHMAllChatList(),transition: Transition.fade,duration: Duration(milliseconds: 600));
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),

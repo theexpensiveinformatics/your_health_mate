@@ -77,6 +77,7 @@ class YHMServiceBookManualLocation extends StatelessWidget {
     );
     if (picked != null && picked != serviceBookingController.selectedDate.value)
       serviceBookingController.selectedDate.value = picked;
+    serviceBookingController.dateController.text=serviceBookingController.selectedDate.toString();
   }
 
   Future<void> _selectTime(BuildContext context) async {
@@ -86,6 +87,7 @@ class YHMServiceBookManualLocation extends StatelessWidget {
     );
     if (picked != null && picked != serviceBookingController.selectedTime.value)
       serviceBookingController.selectedTime.value = picked;
+    serviceBookingController.timeController.text=serviceBookingController.selectedTime.toString();
   }
 
   @override

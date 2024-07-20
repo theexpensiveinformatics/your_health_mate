@@ -1,7 +1,9 @@
+import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:http/http.dart' as http;
 
 import '../../../personalization/controller/user_controller.dart';
 import 'category_controller.dart';
@@ -13,6 +15,7 @@ class HomeServiceController extends GetxController {
   RxList<dynamic> liveServices = <dynamic>[].obs;
   RxList<dynamic> allServices = <dynamic>[].obs;
   RxBool isLoading = true.obs;
+  final String apiKey = 'AIzaSyCGkKWEylc61Pz7Dj-vesTbpp7jq4zbj8I'; // Replace with your Google API Key
 
   @override
   void onInit() {
@@ -41,9 +44,11 @@ class HomeServiceController extends GetxController {
           data['mapLat'],
           data['mapLng'],
         );
+        int trafficTime = await getTrafficTime(userLocation, LatLng(data['mapLat'], data['mapLng']));
         servicesWithDistance.add({
           'data': data,
           'distance': distance,
+          'trafficTime': trafficTime,
         });
       }
 
@@ -54,6 +59,29 @@ class HomeServiceController extends GetxController {
       print('Error fetching services: $e');
     } finally {
       isLoading.value = false;
+    }
+  }
+
+  Future<int> getTrafficTime(LatLng origin, LatLng destination) async {
+    final String url = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
+        'origins=${origin.latitude},${origin.longitude}&'
+        'destinations=${destination.latitude},${destination.longitude}&'
+        'departure_time=now&'
+        'key=$apiKey';
+
+    final response = await http.get(Uri.parse(url));
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      if (data['rows'][0]['elements'][0]['status'] == 'OK') {
+        int durationInSeconds = data['rows'][0]['elements'][0]['duration_in_traffic']['value'];
+        return durationInSeconds;
+      } else {
+        print('Error fetching traffic time: ${data['rows'][0]['elements'][0]['status']}');
+        return 0;
+      }
+    } else {
+      print('Error fetching traffic data: ${response.statusCode}');
+      return 0;
     }
   }
 

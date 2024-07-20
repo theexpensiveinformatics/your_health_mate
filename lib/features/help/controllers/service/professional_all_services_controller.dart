@@ -8,7 +8,7 @@ class ProfessionalAllServicesController extends GetxController {
   var services = [].obs;
   var isLoading = true.obs;
   var isOffline = true.obs; // Determine if the current status is offline
-
+final selectedLiveServiceId=''.obs ;
   @override
   void onInit() {
     super.onInit();

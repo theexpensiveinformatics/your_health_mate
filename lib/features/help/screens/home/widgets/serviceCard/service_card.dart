@@ -42,7 +42,7 @@ class YHMServiceCard extends StatelessWidget {
     required this.estimatedCost,
     required this.kms,
     required this.rating,
-    required this.liveServiceImg, required this.profilePicture, required this.mCity,
+    required this.liveServiceImg, required this.profilePicture, required this.mCity, required this.trafficTime,
   }) : super(key: key);
 
   final String profilePicture;
@@ -65,7 +65,7 @@ class YHMServiceCard extends StatelessWidget {
   final String serviceProviderName;
   final String serviceProviderNumber;
   final String liveServiceID;
-
+final String trafficTime;
   final String liveServiceStatus;
 
   final String estimatedCost;
@@ -208,7 +208,7 @@ class YHMServiceCard extends StatelessWidget {
                               ),
                               SizedBox(width: 5),
                               Text(
-                                '$kms kms away',
+                                '$kms kms • $trafficTime away',
                                 style: Theme.of(context).textTheme.bodySmall!.copyWith(fontWeight: FontWeight.w400),
                               ),
                             ],

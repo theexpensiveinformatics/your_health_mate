@@ -1,13 +1,19 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart%20%20';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:your_health_mate/features/help/screens/professional_service_management/professional_service_management.dart';
 import '../../../../../common/shimmer/YHMShimmerEffect.dart';
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/helper/helper_functions.dart';
+import '../../../controllers/service/professional_all_services_controller.dart';
 
 class ProServiceCard extends StatelessWidget {
-  const ProServiceCard({
+  final professionalAllServicesController = Get.put(ProfessionalAllServicesController());
+   ProServiceCard({
     super.key, required this.mCity, required this.liveServiceDescription, required this.liveServiceCategory, required this.liveServiceInitialCost, required this.mArea, required this.mPostalCode, required this.mapAdministrativeArea, required this.mState, required this.mapCountry, required this.mapLat, required this.mapLng, required this.mapLocality, required this.mapPostalCode, required this.mapStreet, required this.serviceID, required this.serviceProviderEmail, required this.serviceProviderID, required this.serviceProviderName, required this.serviceProviderNumber, required this.liveServiceID, required this.liveServiceStatus, required this.estimatedCost, required this.kms, required this.rating, required this.liveServiceImg, required this.serviceRequest,
   });
   final String serviceRequest;
@@ -43,7 +49,8 @@ class ProServiceCard extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: YHMSizes.md),
       child: InkWell(
         onTap: (){
-
+          professionalAllServicesController.selectedLiveServiceId.value=liveServiceID;
+          Get.to(YHMProfessionalServiceManagement(serviceRequest: serviceRequest, mCity: mCity, liveServiceDescription: liveServiceDescription, liveServiceCategory: liveServiceCategory, liveServiceInitialCost: liveServiceInitialCost, mArea: mArea, mPostalCode: mPostalCode, mapAdministrativeArea: mapAdministrativeArea, mState: mState, mapCountry: mapCountry, mapLat: mapLat, mapLng: mapLng, mapLocality: mapLocality, mapPostalCode: mapPostalCode, mapStreet: mapStreet, serviceID: serviceID, serviceProviderEmail: serviceProviderEmail, serviceProviderID: serviceProviderID, serviceProviderName: serviceProviderName, serviceProviderNumber: serviceProviderNumber, liveServiceID: liveServiceID, liveServiceStatus: liveServiceStatus, estimatedCost: estimatedCost, kms: kms, rating: rating, liveServiceImg: liveServiceImg));
         },
         child: Container(
           padding: EdgeInsets.all(YHMSizes.sm),
@@ -95,7 +102,7 @@ class ProServiceCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
+    
                   const SizedBox(
                     height: YHMSizes.spaceBtwItems / 2,
                   ),
@@ -110,11 +117,11 @@ class ProServiceCard extends StatelessWidget {
                       ),
                     ),
                   ),
-
+    
                   Row(
                     children: [
                       Icon(
-                        Iconsax.shield_tick,
+                        Iconsax.routing,
                         size: YHMSizes.iconSm,
                       ),
                       const SizedBox(
@@ -123,7 +130,7 @@ class ProServiceCard extends StatelessWidget {
                       Container(
                           width: YHMHelperFunctions.screenWidth() / 3,
                           child: Text(
-                            '{liveServiceWarraunty}',
+                            '$mCity, $mState',
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
                           )),
@@ -173,7 +180,7 @@ class ProServiceCard extends StatelessWidget {
                           overflow: TextOverflow.ellipsis),
                     ),
                   ),
-
+    
                 ],
               ),
             ],

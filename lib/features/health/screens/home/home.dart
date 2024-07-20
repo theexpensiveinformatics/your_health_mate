@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:your_health_mate/common/shimmer/YHMShimmerEffect.dart';
 import 'package:your_health_mate/common/shimmer/YHMShimmerTreatment.dart';
+import 'package:your_health_mate/features/DoctorHistory/history_tracker.dart';
 import 'package:your_health_mate/features/health/controllers/home/home_controller.dart';
 import 'package:your_health_mate/features/health/screens/chat/all_chat_list.dart';
 import 'package:your_health_mate/features/health/screens/chat/chat_two.dart';
@@ -245,35 +246,40 @@ class YHMHomeScreen extends StatelessWidget {
                   const SizedBox(width: 10,),
                   Flexible(
                     flex: 1,
-                    child: Container(
-                      width: double.infinity,
-                      height: 180,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color:YHMColors.sectionActivity.withOpacity(0.5)
-                      ),
-                      child: Stack(
-                        children: [
+                    child: GestureDetector(
+                      onTap: (){
+                        Get.to(LineDefault());
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: 180,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color:YHMColors.sectionActivity.withOpacity(0.5)
+                        ),
+                        child: Stack(
+                          children: [
 
-                          Positioned(
-                            bottom: 20,
-                              right: 25,
-                              child:Container(
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  color: YHMColors.dark.withOpacity(0.1),
-                                ),
-                                child: Icon(Icons.navigate_next,color: YHMColors.dark.withOpacity(0.8),),
-                              ) ),
-                          Positioned(child: Opacity(opacity: 0.5,
-                          child: Image.asset('assets/images/circle_scribble.png',)),bottom: -150,right: 0,left: -150,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20,top: 20),
-                            child: Text('Activity \nTracker',style: NewTextTheme.bold!.copyWith(fontSize: 15),),
-                          ),
-                        ],
+                            Positioned(
+                              bottom: 20,
+                                right: 25,
+                                child:Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(100),
+                                    color: YHMColors.dark.withOpacity(0.1),
+                                  ),
+                                  child: Icon(Icons.navigate_next,color: YHMColors.dark.withOpacity(0.8),),
+                                ) ),
+                            Positioned(child: Opacity(opacity: 0.5,
+                            child: Image.asset('assets/images/circle_scribble.png',)),bottom: -150,right: 0,left: -150,),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20,top: 20),
+                              child: Text('History \nTracker',style: NewTextTheme.bold!.copyWith(fontSize: 15),),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

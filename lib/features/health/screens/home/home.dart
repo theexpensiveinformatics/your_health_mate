@@ -6,8 +6,6 @@ import 'package:your_health_mate/common/shimmer/YHMShimmerEffect.dart';
 import 'package:your_health_mate/common/shimmer/YHMShimmerTreatment.dart';
 import 'package:your_health_mate/features/health/controllers/home/home_controller.dart';
 import 'package:your_health_mate/features/health/screens/chat/all_chat_list.dart';
-import 'package:your_health_mate/features/health/screens/chat/chat_two.dart';
-import 'package:your_health_mate/features/health/screens/chat/new_chat.dart';
 import 'package:your_health_mate/features/health/screens/home/wigets/emoji_container.dart';
 import 'package:your_health_mate/features/health/screens/home/wigets/treatment_item_layout.dart';
 import 'package:your_health_mate/features/health/screens/personalized_treatment/personalized_treatment_firebase.dart';

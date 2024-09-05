@@ -7,7 +7,9 @@ import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:your_health_mate/features/assignment/screens/employee_information.dart';
 import 'package:your_health_mate/features/health/screens/home/home.dart';
+import 'package:your_health_mate/features/myonsitehealthcare/screens/input_screen/input_screen.dart';
 import 'package:your_health_mate/navigation_menu.dart';
 
 import '../../../features/authentication/screens/login/login.dart';
@@ -45,7 +47,7 @@ class AuthenticationRepository extends GetxController {
     if (user != null) {
       if (user.emailVerified) {
 
-        Get.offAll(() =>  const YHMNavigationMenu(),transition: Transition.cupertino);
+        Get.offAll(() =>  const IPInputScreen(),transition: Transition.cupertino);
       } else {
         Get.offAll(() => VerifyEmailScreen(
           email: _auth.currentUser?.email,

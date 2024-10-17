@@ -12,6 +12,7 @@ import 'package:your_health_mate/features/health/screens/personalized_treatment/
 import 'package:your_health_mate/utils/constants/colors.dart';
 import 'package:your_health_mate/utils/helper/helper_functions.dart';
 import 'package:your_health_mate/utils/newTheme/new_text_theme.dart';
+import '../../../college_project/screen/encypted_chat_screen.dart';
 import '../../../help/screens/home/home_three.dart';
 import '../../../personalization/controller/user_controller.dart';
 import '../../../remainder/screens/reminder_home.dart';
@@ -31,6 +32,13 @@ class YHMHomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            ElevatedButton(
+              onPressed: () {
+                // Use Get.to() to navigate to EncryptedChatScreen
+                Get.to(() => EncryptedChatScreen());
+              },
+              child: Text('Chat Screen'),
+            ),
             Container(
               margin: EdgeInsets.all(12),
               decoration: BoxDecoration(

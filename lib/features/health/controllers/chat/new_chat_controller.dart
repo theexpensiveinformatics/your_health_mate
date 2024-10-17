@@ -17,6 +17,7 @@ class NewChatController extends GetxController {
   String allMessagesString = '';
   String finalQuestion = '';
   final chatListController = Get.find<AllChatListController>();
+  final responseLoading = false.obs;
 
   @override
   void onInit() {
@@ -53,6 +54,7 @@ class NewChatController extends GetxController {
   }
 
   void sendMessage() async {
+    responseLoading.value = true;
     if (textController.text.trim().isEmpty) return;
 
     final now = DateTime.now();
@@ -89,9 +91,12 @@ class NewChatController extends GetxController {
 
       getGeminiResponse(finalQuestion);
       textController.clear(); // Clear the text field after sending
+
+
     } catch (e) {
       // Handle errors (e.g., show a snackbar or log the error)
       print('Error sending message: $e');
+      responseLoading.value=false;
     }
   }
 
@@ -121,11 +126,14 @@ class NewChatController extends GetxController {
             'isUser': geminiMessage.isUser,
           });
           finalResponse.value = '';
+          responseLoading.value=false;
         },
       );
+
     } catch (e) {
       // Handle errors (e.g., show a snackbar or log the error)
       print('Error getting Gemini response: $e');
+      responseLoading.value=false;
     }
   }
 }

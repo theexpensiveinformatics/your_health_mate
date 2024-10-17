@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:your_health_mate/common/shimmer/YHMShimmerEffect.dart';
 import 'package:your_health_mate/features/health/screens/chat/new_chat.dart';
 import 'package:your_health_mate/utils/constants/colors.dart';
 import '../../controllers/chat/all_chat_list_controller.dart';
@@ -65,7 +66,7 @@ class YHMAllChatList extends StatelessWidget {
                         bottom: 40,
                         left: 25,
                         child: Text(
-                          'Create unlimited chat rooms',
+                          'Create unlimited chat sessions',
                           style: TextStyle(
                             fontSize: 18,
                             color: YHMColors.dark,
@@ -96,7 +97,20 @@ class YHMAllChatList extends StatelessWidget {
               const SizedBox(height: 20),
               Obx(() {
                 if (controller.isLoading.value) {
-                  return Text('Loading...');
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Column(
+                      children: [
+                        YHMShimmerEffect(width: double.infinity, height: 50,radius: 8,),
+                        const SizedBox(height: 10,),
+                        YHMShimmerEffect(width: double.infinity, height: 50,radius: 8,),
+                        const SizedBox(height: 10,),
+                        YHMShimmerEffect(width: double.infinity, height: 50,radius: 8,),
+                        const SizedBox(height: 10,),
+                        YHMShimmerEffect(width: double.infinity, height: 50,radius: 8,),
+                      ],
+                    ),
+                  );
                 } else if (controller.chatSessions.isEmpty) {
                   return Text('No chat sessions available');
                 } else {
@@ -108,6 +122,7 @@ class YHMAllChatList extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final chatSession = controller.chatSessions[index];
                       return ListTile(
+                        contentPadding: EdgeInsets.symmetric(horizontal: 10),
                         title: Container(
                           height: 60,
                         decoration: BoxDecoration(
